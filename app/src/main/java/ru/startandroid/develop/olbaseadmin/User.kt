@@ -4,8 +4,8 @@ class User {
     val name = ""
     var place = ""
     var rating = ""
-    class Olymp {
+    class Olympiad {
         val name = ""
     }
-    var olymps: MutableList<Olymp> = mutableListOf()
+    var olymps: MutableList<Olympiad> = mutableListOf()
 }

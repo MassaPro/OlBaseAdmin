@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "594581637507",
+    "firebase_url": "https://ustal-80bb7.firebaseio.com",
+    "project_id": "ustal-80bb7",
+    "storage_bucket": "ustal-80bb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594581637507:android:7066598c28682f18020eb6",
+        "android_client_info": {
+          "package_name": "ru.startandroid.develop.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594581637507-k336eueu13p231pogjq8djv4odste234.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBd48qoxAV93t3trBhldiekIKIdyXpkkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594581637507-k336eueu13p231pogjq8djv4odste234.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594581637507:android:563beb30bab83742020eb6",
+        "android_client_info": {
+          "package_name": "ru.startandroid.develop.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594581637507-k336eueu13p231pogjq8djv4odste234.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBd48qoxAV93t3trBhldiekIKIdyXpkkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594581637507-k336eueu13p231pogjq8djv4odste234.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594581637507:android:31f6559611dc829a020eb6",
+        "android_client_info": {
+          "package_name": "ru.startandroid.develop.olbaseadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594581637507-k336eueu13p231pogjq8djv4odste234.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBd48qoxAV93t3trBhldiekIKIdyXpkkg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594581637507-k336eueu13p231pogjq8djv4odste234.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
