@@ -3,13 +3,18 @@ package ru.startandroid.develop.olbaseadmin
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_list_content.view.*
 
@@ -40,10 +45,10 @@ class MainActivity : AppCompatActivity() {
         init {
             onClickListener = View.OnClickListener { v ->
             val item = v.tag as String
-                /*val intent = Intent(v.context, ItemDetailActivity::class.java).apply {
-                    putExtra(ItemDetailFragment.ARG_ITEM_ID, item.id)
+                val intent = Intent(v.context, MainActivity::class.java).apply {
+                    //putExtra(ItemDetailFragment.ARG_ITEM_ID, item.id)
                 }
-                v.context.startActivity(intent)*/
+                v.context.startActivity(intent)
             }
         }
 
@@ -54,24 +59,40 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            val item = values[position]
-            holder.idView.text = item
+            if (position % 2 == 0) {
 
-            //holder.contentView.setTextColor(Color.parseColor("#" + getColorByRating(item.rating)))
-            //holder.ratingView.setTextColor(Color.parseColor("#" + getColorByRating(item.rating)))
-
-            with(holder.itemView) {
-                tag = item
-                setOnClickListener(onClickListener)
             }
-            //holder.setBackgroundColor(Color.parseColor("#FF4081"))
+            myRef.addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {
+                    Log.d("TAG", "Database error")
+                }
+
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    //Get Post object and use the values to update the UI
+                    val item: String = dataSnapshot.child("vector").child(position.toString()).child("content").getValue().toString()
+                    holder.idView.text = item
+                    holder.contentView.text = item + item
+                    //holder.card
+                    //holder.contentView.setTextColor(Color.parseColor("#" + getColorByRating(item.rating)))
+                    //holder.ratingView.setTextColor(Color.parseColor("#" + getColorByRating(item.rating)))
+
+                    with(holder.itemView) {
+                        tag = item
+                        setOnClickListener(onClickListener)
+                    }
+                    //holder.setBackgroundColor(Color.parseColor("#FF4081"))
+                }
+            })
+
 
         }
 
-        override fun getItemCount() = values.size
+        override fun getItemCount() = 100
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val idView: TextView = view.id_text
+            val contentView = view.content
+            //val card: CardView = view.card as CardView
         }
     }
 }

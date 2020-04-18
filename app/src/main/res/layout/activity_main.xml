@@ -6,7 +6,7 @@
     android:name="ru.startandroid.develop.myapplication.ItemListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
+    android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".MainActivity"
